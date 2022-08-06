@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Course {
+  id         String             @id @default(uuid())
+  courseName String
+  users      CourseEnrollment[]
+  exams      Exam[]
+}
+
+model CourseEnrollment {
+  course   Course @relation(fields: [courseId], references: [id])
+  courseId String @default(uuid()) // relation scalar field (used in the `@relation` attribute above)
+  user     User   @relation(fields: [userId], references: [id])
+  userId   String @default(uuid()) // relation scalar field (used in the `@relation` attribute above)
+
+  @@id([courseId, userId])
+}
+
+model User {
+  id        String             @id @default(uuid())
+  email     String
+  firstName String
+  lastName  String
+  role      Role
+  course    CourseEnrollment[]
+  responses ExamResponses[]
+}
+
+model Exam {
+  id           String          @id @default(uuid())
+  name         String
+  averageScore Float?
+  course       Course          @relation(fields: [courseId], references: [id])
+  courseId     String          @default(uuid())
+  Questions    String?
+  responses    ExamResponses[]
+}
+
+model ExamResponses {
+  answers String?
+  exam    Exam    @relation(fields: [examId], references: [id])
+  examId  String  @default(uuid())
+  user    User    @relation(fields: [userId], references: [id])
+  userId  String  @default(uuid())
+  result  Float?
+
+  @@id([examId, userId])
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
