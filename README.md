@@ -1,6 +1,4 @@
 # The Masked Grader
-Your challenge, should you choose to accept it, it to join forces with other budding developers to create “The Masked Grader”, a modern, anonymous grading platform that promotes more egalitarian grading outcomes for Students and Course Instructors.
-
 What’s is the Masked Grader?
 As a student, have you ever received a grade that you thought was unjustified, unfair or biased? Well, what if there a way for you to submit your work for a grade while masking your personal identity on the part of the grader. That’s where “The Masked Grader” comes in. The way that it works is simple:
 
@@ -12,7 +10,10 @@ As a student, have you ever received a grade that you thought was unjustified, u
 - System retains all exam results until the Instructor has completed the grading process(thereby preventing the instructors/students from triangulating identity based on submission time)
 - System distributed grades to students in batch after the instructor has completed the grading process.
 - System ‘unmasks’ the student identity to the instructor after grades have been distributed to the student body
-Deliverables: 1. Define an application schema to include the following data models:
+
+Deliverables: 
+
+1. Define an application schema to include the following data models:
 
 - Students
 - Instructors
