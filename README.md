@@ -2,6 +2,10 @@
 What’s is the Masked Grader?
 As a student, have you ever received a grade that you thought was unjustified, unfair or biased? Well, what if there a way for you to submit your work for a grade while masking your personal identity on the part of the grader. That’s where “The Masked Grader” comes in. The way that it works is simple:
 
+![landing page](./images/landing.png)
+![register](./images/register.png)
+![exam](./images/exam.png)
+![database](./images/supabase.png)
 - Instructor creates exam and exam questions
 - Instructor sends the exam to students to complete the exam online through the authenticated front-end interface
 - Students complete the exam and submit for grading
